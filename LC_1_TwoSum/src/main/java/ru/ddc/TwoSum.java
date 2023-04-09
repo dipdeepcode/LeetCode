@@ -5,22 +5,22 @@ public class TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
         arr = new Node[nums.length];
+        Node proxy;
         for (int i = 0; i < nums.length; i++) {
             int key = target - nums[i];
-            if (getNodeForKey(key) != null) {
-                return new int[]{get(key), i};
+            proxy = getNodeForKey(key);
+            if (proxy != null) {
+                return new int[]{proxy.value, i};
+            } else {
+                put(nums[i], i);
             }
-            put(nums[i], i);
         }
         return null;
     }
 
     public void put(int key, int value) {
-
         Node node = getNodeForKey(key);
-        if (node != null) {
-            node.value = value;
-        } else {
+        if (node == null) {
             node = new Node(key, value);
             int index = getIndexForKey(key);
             if (arr[index] != null) {
@@ -28,15 +28,6 @@ public class TwoSum {
                 node.next.prev = node;
             }
             arr[index] = node;
-        }
-    }
-
-    public int get(int key) {
-        Node node = getNodeForKey(key);
-        if (node != null) {
-            return node.value;
-        } else {
-            return -1;
         }
     }
 
