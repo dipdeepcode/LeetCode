@@ -16,10 +16,6 @@ public class MedianOfTwoSortedArrays {
                 i2++;
             }
         }
-        if ((nums1.length + nums2.length) % 2 == 0) {
-            return (current + previous) / 2.0;
-        } else {
-            return current;
-        }
+        return (nums1.length + nums2.length) % 2 == 0 ? (current + previous) / 2.0 : current;
     }
 }
