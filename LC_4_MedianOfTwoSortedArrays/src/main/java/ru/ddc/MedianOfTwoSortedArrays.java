@@ -1,17 +1,25 @@
 package ru.ddc;
 
-import java.util.Arrays;
-
 public class MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int[] result = new int[nums1.length + nums2.length];
-        System.arraycopy(nums1, 0, result, 0, nums1.length);
-        System.arraycopy(nums2, 0, result, nums1.length, nums2.length);
-        Arrays.sort(result);
-        if (result.length % 2 == 1) {
-            return result[result.length / 2];
+        int i1 = 0, i2 = 0;
+        int current = 0, previous = 0;
+        while ((i1 + i2) <= (nums1.length + nums2.length) / 2) {
+            int a1 = i1 < nums1.length ? nums1[i1] : Integer.MAX_VALUE;
+            int a2 = i2 < nums2.length ? nums2[i2] : Integer.MAX_VALUE;
+            previous = current;
+            if (a1 < a2) {
+                current = a1;
+                i1++;
+            } else {
+                current = a2;
+                i2++;
+            }
+        }
+        if ((nums1.length + nums2.length) % 2 == 0) {
+            return (current + previous) / 2.0;
         } else {
-            return  (result[result.length / 2 - 1] + result[result.length / 2]) / 2.0;
+            return current;
         }
     }
 }

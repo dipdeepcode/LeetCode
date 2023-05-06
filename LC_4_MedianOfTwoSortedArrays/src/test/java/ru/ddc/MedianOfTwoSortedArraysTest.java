@@ -16,4 +16,8 @@ class MedianOfTwoSortedArraysTest {
         assertEquals(2.5, new MedianOfTwoSortedArrays().findMedianSortedArrays(new int[]{1, 2}, new int[]{3, 4}));
     }
 
+    @Test
+    public void test3() {
+        assertEquals(2.5, new MedianOfTwoSortedArrays().findMedianSortedArrays(new int[]{}, new int[]{2, 3}));
+    }
 }
