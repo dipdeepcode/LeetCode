@@ -8,13 +8,9 @@ public class MedianOfTwoSortedArrays {
             int a1 = i1 < nums1.length ? nums1[i1] : Integer.MAX_VALUE;
             int a2 = i2 < nums2.length ? nums2[i2] : Integer.MAX_VALUE;
             previous = current;
-            if (a1 < a2) {
-                current = a1;
-                i1++;
-            } else {
-                current = a2;
-                i2++;
-            }
+            current = Math.min(a1, a2);
+            i1 += a1 < a2 ? 1 : 0;
+            i2 += a1 < a2 ? 0 : 1;
         }
         return (nums1.length + nums2.length) % 2 == 0 ? (current + previous) / 2.0 : current;
     }
