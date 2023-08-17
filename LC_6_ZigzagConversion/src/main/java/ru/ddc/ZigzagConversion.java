@@ -2,37 +2,24 @@ package ru.ddc;
 
 public class ZigzagConversion {
     public String convert(String s, int numRows) {
-        if (numRows == 1) {
+        if (numRows == 1 || numRows >= s.length()) {
             return s;
         }
 
-        int section = (numRows * 2 - 2) == 0 ? 1 : numRows * 2 - 2;
-        int j = (int) Math.ceil((double) s.length() / section) * (numRows - 1);
-        if (j == 0) {
-            j = 1;
-        }
-        char[][] temp = new char[numRows][j];
-
-        int[] cursor = new int[2];
-        for (int i = 0; i < s.length(); i++) {
-            temp[cursor[0]][cursor[1]] = s.charAt(i);
-            if (i % section < numRows - 1) {
-                cursor[0]++;
-            } else if (i % section < section) {
-                cursor[0]--;
-                cursor[1]++;
-            }
+        StringBuilder[] stringBuilders = new StringBuilder[numRows];
+        for (int i = 0; i < stringBuilders.length; i++) {
+            stringBuilders[i] = new StringBuilder();
         }
 
-        StringBuilder sb = new StringBuilder();
-        for (char[] chars : temp) {
-            for (char aChar : chars) {
-                if (aChar != '\u0000') {
-                    sb.append(aChar);
-                }
-            }
+        for (int i = 0, row = 0; i < s.length(); i++) {
+            stringBuilders[row].append(s.charAt(i));
+            row += (i % (numRows * 2 - 2) < numRows - 1) ? 1 : -1;
         }
 
-        return sb.toString();
+        for (int i = 1; i < stringBuilders.length; i++) {
+            stringBuilders[0].append(stringBuilders[i]);
+        }
+
+        return stringBuilders[0].toString();
     }
 }
