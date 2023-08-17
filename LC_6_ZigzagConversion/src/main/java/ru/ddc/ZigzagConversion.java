@@ -5,21 +5,16 @@ public class ZigzagConversion {
         if (numRows == 1 || numRows >= s.length()) {
             return s;
         }
-
-        StringBuilder[] stringBuilders = new StringBuilder[numRows];
-        for (int i = 0; i < stringBuilders.length; i++) {
-            stringBuilders[i] = new StringBuilder();
+        StringBuilder result = new StringBuilder();
+        int step = 2 * numRows - 2;
+        for (int row = 0; row < numRows; row++) {
+            for (int j = row; j < s.length(); j += step) {
+                result.append(s.charAt(j));
+                if (row != 0 && row != numRows - 1 && (j + step - 2 * row) < s.length()) {
+                    result.append(s.charAt(j + step - 2 * row));
+                }
+            }
         }
-
-        for (int i = 0, row = 0; i < s.length(); i++) {
-            stringBuilders[row].append(s.charAt(i));
-            row += (i % (numRows * 2 - 2) < numRows - 1) ? 1 : -1;
-        }
-
-        for (int i = 1; i < stringBuilders.length; i++) {
-            stringBuilders[0].append(stringBuilders[i]);
-        }
-
-        return stringBuilders[0].toString();
+        return result.toString();
     }
 }
