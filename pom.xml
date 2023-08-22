@@ -22,12 +22,13 @@
     <module>LC_90_SubsetsII</module>
     <module>LC_859_BuddyStrings</module>
     <module>LC_7_ReverseInteger</module>
+      <module>LC_8_StringToInteger</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
