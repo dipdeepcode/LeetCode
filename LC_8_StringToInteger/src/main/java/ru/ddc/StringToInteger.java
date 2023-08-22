@@ -6,44 +6,27 @@ public class StringToInteger {
         if (s.length() == 0) {
             return 0;
         }
-        boolean isNegative = false;
-        boolean isSignPresent = false;
-        if (s.charAt(0) == '-') {
-            isNegative = true;
-            isSignPresent = true;
-        }
+        int sign = 1;
+        int start = 0;
         if (s.charAt(0) == '+') {
-            isSignPresent = true;
+            sign = 1;
+            start++;
+        } else if (s.charAt(0) == '-') {
+            sign = -1;
+            start++;
         }
-        if ((s.charAt(0) < '0' || s.charAt(0) > '9') && (s.charAt(0) != '-') && (s.charAt(0) != '+')) {
-            return 0;
-        }
-        StringBuilder sb = new StringBuilder();
-        if (isNegative) {
-            sb.append('-');
-        }
-        for (int i = isSignPresent ? 1 : 0; i < s.length(); i++) {
-            if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
-                sb.append(s.charAt(i));
+        int res = 0;
+        for (int i = start; i < s.length(); i++) {
+            if (s.charAt(i) - '0' >= 0 && s.charAt(i) - '0' <= 9) {
+                if (((res * 10 + s.charAt(i) - '0') * sign / 10) == res * sign) {
+                    res = res * 10 + s.charAt(i) - '0';
+                } else {
+                    return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+                }
             } else {
                 break;
             }
         }
-        if (sb.length() == 0 || "-".equals(sb.toString())) {
-            sb.append('0');
-        }
-        int result;
-        try {
-            result = Integer.parseInt(sb.toString());
-        } catch (RuntimeException e) {
-            if (isNegative) {
-                return Integer.MIN_VALUE;
-            } else {
-                return Integer.MAX_VALUE;
-            }
-        }
-
-        return result;
-
+        return res * sign;
     }
 }
