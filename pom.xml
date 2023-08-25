@@ -12,18 +12,18 @@
   <name>LC</name>
 
   <modules>
-    <module>LC_1_TwoSum</module>
-    <module>LC_2_AddTwoNumbers</module>
-    <module>LC_3_LSWRC</module>
-    <module>LC_4_MedianOfTwoSortedArrays</module>
-    <module>LC_5_LongestPalindromicSubstring</module>
-    <module>LC_6_ZigzagConversion</module>
-    <module>LC_7_ReverseInteger</module>
-    <module>LC_8_StringToInteger</module>
-    <module>LC_9_PalindromeNumber</module>
-    <module>LC_10_RegularExpressionMatching</module>
-    <module>LC_67_AddBinary</module>
-    <module>LC_90_SubsetsII</module>
+    <module>LC_001_TwoSum</module>
+    <module>LC_002_AddTwoNumbers</module>
+    <module>LC_003_LSWRC</module>
+    <module>LC_004_MedianOfTwoSortedArrays</module>
+    <module>LC_005_LongestPalindromicSubstring</module>
+    <module>LC_006_ZigzagConversion</module>
+    <module>LC_007_ReverseInteger</module>
+    <module>LC_008_StringToInteger</module>
+    <module>LC_009_PalindromeNumber</module>
+    <module>LC_010_RegularExpressionMatching</module>
+    <module>LC_067_AddBinary</module>
+    <module>LC_090_SubsetsII</module>
   </modules>
 
   <properties>

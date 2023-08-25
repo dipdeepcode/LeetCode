@@ -10,8 +10,8 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_4_MedianOfTwoSortedArrays</artifactId>
+  <artifactId>LC_001_TwoSum</artifactId>
 
-  <name>LC_4_MedianOfTwoSortedArrays</name>
+  <name>LC_1_TwoSum</name>
 
 </project>

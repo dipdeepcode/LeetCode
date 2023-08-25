@@ -9,8 +9,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>LC_10_RegularExpressionMatching</artifactId>
+    <artifactId>LC_008_StringToInteger</artifactId>
 
-    <name>LC_10_RegularExpressionMatching</name>
+    <name>LC_8_StringToInteger</name>
 
 </project>

@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>LC_9_PalindromeNumber</artifactId>
+    <artifactId>LC_009_PalindromeNumber</artifactId>
 
     <name>LC_9_PalindromeNumber</name>
 

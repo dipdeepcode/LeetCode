@@ -10,8 +10,8 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_3_LSWRC</artifactId>
+  <artifactId>LC_067_AddBinary</artifactId>
 
-  <name>LC_3_LongestSubstringWithoutRepeatingCharacter</name>
+  <name>LC_67_AddBinary</name>
 
 </project>

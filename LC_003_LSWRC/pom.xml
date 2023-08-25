@@ -10,8 +10,8 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_1_TwoSum</artifactId>
+  <artifactId>LC_003_LSWRC</artifactId>
 
-  <name>LC_1_TwoSum</name>
+  <name>LC_3_LongestSubstringWithoutRepeatingCharacter</name>
 
 </project>

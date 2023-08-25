@@ -10,8 +10,8 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_2_AddTwoNumbers</artifactId>
+  <artifactId>LC_090_SubsetsII</artifactId>
 
-  <name>LC_2_AddTwoNumbers</name>
+  <name>LC_SubsetsII</name>
 
 </project>

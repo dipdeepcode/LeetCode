@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_5_LongestPalindromicSubstring</artifactId>
+  <artifactId>LC_005_LongestPalindromicSubstring</artifactId>
 
   <name>LC_5_LongestPalindromicSubstring</name>
 
