@@ -9,8 +9,6 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>LC</name>
-
   <modules>
     <module>LC_001_TwoSum</module>
     <module>LC_002_AddTwoNumbers</module>
