@@ -3,13 +3,12 @@ package ru.ddc;
 public class StringToInteger {
     public int myAtoi(String s) {
         s = s.trim();
-        if (s.length() == 0) {
+        if (s.isEmpty()) {
             return 0;
         }
         int sign = 1;
         int start = 0;
         if (s.charAt(0) == '+') {
-            sign = 1;
             start++;
         } else if (s.charAt(0) == '-') {
             sign = -1;
