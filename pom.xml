@@ -21,9 +21,9 @@
     <module>LC_7_ReverseInteger</module>
     <module>LC_8_StringToInteger</module>
     <module>LC_9_PalindromeNumber</module>
+    <module>LC_10_RegularExpressionMatching</module>
     <module>LC_67_AddBinary</module>
     <module>LC_90_SubsetsII</module>
-    <module>LC_859_BuddyStrings</module>
   </modules>
 
   <properties>
