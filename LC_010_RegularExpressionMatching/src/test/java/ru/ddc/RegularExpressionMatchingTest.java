@@ -54,6 +54,21 @@ class RegularExpressionMatchingTest {
 
     @Test
     public void test10() {
-        assertTrue(regularExpressionMatching.isMatch("ab", ".*ab"));
+        assertTrue(regularExpressionMatching.isMatch("ab", ".*.."));
+    }
+
+    @Test
+    public void test11() {
+        assertTrue(regularExpressionMatching.isMatch("aaa", "ab*ac*a"));
+    }
+
+    @Test
+    public void test12() {
+        assertTrue(regularExpressionMatching.isMatch("a", "..*"));
+    }
+
+    @Test
+    public void test13() {
+        assertTrue(regularExpressionMatching.isMatch("aa", "a*"));
     }
 }

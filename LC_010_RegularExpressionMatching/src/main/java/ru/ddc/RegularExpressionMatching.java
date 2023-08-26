@@ -2,45 +2,33 @@ package ru.ddc;
 
 public class RegularExpressionMatching {
     public boolean isMatch(String s, String p) {
-
-        int j = 0;
-        boolean starFlag = false;
+        if (s == null || p == null) {
+            return false;
+        }
+        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
+        dp[0][0] = true;
         for (int i = 0; i < p.length(); i++) {
-            char symbol = p.charAt(i);
-            char quantity = '1';
-            if ((i < p.length() - 1) && '*' == p.charAt(i + 1)) {
-                quantity = '*';
-                i++;
+            if (p.charAt(i) == '*' && dp[0][i - 1]) {
+                dp[0][i + 1] = true;
             }
-            System.out.println("" + symbol + quantity);
-
-
-
-            if ('*' == quantity) {
-                for (int k = j; k < s.length(); k++) {
-                    if ('.' == symbol || s.charAt(k) == symbol) {
-                        j = k;
-                        starFlag = true;
-                        j++;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < p.length(); j++) {
+                if (p.charAt(j) == '.') {
+                    dp[i + 1][j + 1] = dp[i][j];
+                }
+                if (p.charAt(j) == s.charAt(i)) {
+                    dp[i + 1][j + 1] = dp[i][j];
+                }
+                if (p.charAt(j) == '*') {
+                    if (p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != '.') {
+                        dp[i + 1][j + 1] = dp[i + 1][j - 1];
                     } else {
-                        break;
+                        dp[i + 1][j + 1] = dp[i + 1][j] || dp[i][j + 1] || dp[i + 1][j - 1];
                     }
                 }
-            } else {
-                if (starFlag && j == s.length()) {
-                    j--;
-                }
-                if (j == s.length()) {
-                    return false;
-                }
-                if (!('.' == symbol || s.charAt(j) == symbol)) {
-                    return false;
-                }
-                starFlag = false;
-                j++;
             }
-            System.out.println("starFlag=" + starFlag + " --- j=" + j);
         }
-        return j == s.length();
+        return dp[s.length()][p.length()];
     }
 }
