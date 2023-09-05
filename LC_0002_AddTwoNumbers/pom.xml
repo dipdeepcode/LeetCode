@@ -10,6 +10,6 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_067_AddBinary</artifactId>
+  <artifactId>LC_0002_AddTwoNumbers</artifactId>
 
 </project>

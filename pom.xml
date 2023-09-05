@@ -10,18 +10,20 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>LC_001_TwoSum</module>
-    <module>LC_002_AddTwoNumbers</module>
-    <module>LC_003_LSWRC</module>
-    <module>LC_004_MedianOfTwoSortedArrays</module>
-    <module>LC_005_LongestPalindromicSubstring</module>
-    <module>LC_006_ZigzagConversion</module>
-    <module>LC_007_ReverseInteger</module>
-    <module>LC_008_StringToInteger</module>
-    <module>LC_009_PalindromeNumber</module>
-    <module>LC_010_RegularExpressionMatching</module>
-    <module>LC_067_AddBinary</module>
-    <module>LC_090_SubsetsII</module>
+
+    <module>LC_0001_TwoSum</module>
+    <module>LC_0002_AddTwoNumbers</module>
+    <module>LC_0003_LSWRC</module>
+    <module>LC_0004_MedianOfTwoSortedArrays</module>
+    <module>LC_0005_LongestPalindromicSubstring</module>
+    <module>LC_0006_ZigzagConversion</module>
+    <module>LC_0007_ReverseInteger</module>
+    <module>LC_0008_StringToInteger</module>
+    <module>LC_0009_PalindromeNumber</module>
+    <module>LC_0010_RegularExpressionMatching</module>
+    <module>LC_0067_AddBinary</module>
+    <module>LC_0090_SubsetsII</module>
+    <module>LC_0011_ContainerWithMostWater</module>
   </modules>
 
   <properties>

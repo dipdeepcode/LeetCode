@@ -10,6 +10,6 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_001_TwoSum</artifactId>
+  <artifactId>LC_0001_TwoSum</artifactId>
 
 </project>

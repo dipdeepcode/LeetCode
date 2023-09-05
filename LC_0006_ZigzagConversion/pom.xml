@@ -10,6 +10,6 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_003_LSWRC</artifactId>
+  <artifactId>LC_0006_ZigzagConversion</artifactId>
 
 </project>

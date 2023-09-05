@@ -9,6 +9,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>LC_009_PalindromeNumber</artifactId>
+    <artifactId>LC_0008_StringToInteger</artifactId>
 
 </project>

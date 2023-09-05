@@ -10,6 +10,6 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>LC_006_ZigzagConversion</artifactId>
+  <artifactId>LC_0005_LongestPalindromicSubstring</artifactId>
 
 </project>
