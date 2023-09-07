@@ -1,39 +1,29 @@
 package ru.ddc;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class RomanToInteger {
 
-    private final Map<Character, Integer> map = new HashMap<>() {{
-        put('I', 1);
-        put('V', 5);
-        put('X', 10);
-        put('L', 50);
-        put('C', 100);
-        put('D', 500);
-        put('M', 1000);
-    }};
-
-    private final Map<String, Integer> map2 = new HashMap<>() {{
-       put("IV", 4);
-       put("IX", 9);
-       put("XL", 40);
-       put("XC", 90);
-       put("CD", 400);
-       put("CM", 900);
-    }};
-
     public int romanToInt(String s) {
-        int result = 0;
-        for (int i = s.length() - 1; i >= 0; i--) {
-            if (i > 0 && map.get(s.charAt(i)) > map.get(s.charAt(i - 1))) {
-                result += map2.get(s.substring(i - 1, i + 1));
-                i--;
-            } else {
-                result += map.get(s.charAt(i));
+
+        int answer = 0, number = 0, prev = 0;
+
+        for (int j = s.length() - 1; j >= 0; j--) {
+            switch (s.charAt(j)) {
+                case 'M' -> number = 1000;
+                case 'D' -> number = 500;
+                case 'C' -> number = 100;
+                case 'L' -> number = 50;
+                case 'X' -> number = 10;
+                case 'V' -> number = 5;
+                case 'I' -> number = 1;
             }
+            if (number < prev) {
+                answer -= number;
+            }
+            else {
+                answer += number;
+            }
+            prev = number;
         }
-        return result;
+        return answer;
     }
 }
