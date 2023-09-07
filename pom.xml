@@ -25,6 +25,7 @@
     <module>LC_0090_SubsetsII</module>
     <module>LC_0011_ContainerWithMostWater</module>
     <module>LC_0012_IntegerToRoman</module>
+    <module>LC_0013_RomanToInteger</module>
   </modules>
 
   <properties>
