@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TreeSumTest {
-    private TreeSum treeSum = new TreeSum();
+    private final TreeSum treeSum = new TreeSum();
 
     @Test
     public void test1() {
