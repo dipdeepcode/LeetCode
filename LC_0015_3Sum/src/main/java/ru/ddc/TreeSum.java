@@ -11,19 +11,34 @@ public class TreeSum {
                 int l = i + 1;
                 int r = nums.length - 1;
                 while (l < r) {
-                    int sum = nums[l] + nums[r];
-                    if (sum > -nums[i]) {
-                        r--;
-                    } else if (sum < -nums[i]) {
-                        l++;
+                    if (nums[i] + nums[l] + nums[r] > 0) {
+                        r = decreaseR(nums, r, l);
+                    } else if (nums[i] + nums[l] + nums[r] < 0) {
+                        l = increaseL(nums, l, r);
                     } else {
                         result.add(List.of(nums[i], nums[l], nums[r]));
-                        r--;
-                        l++;
+                        r = decreaseR(nums, r, l);
+                        l = increaseL(nums, l, r);
                     }
                 }
             }
         }
         return result.stream().toList();
+    }
+
+    private int increaseL(int[] nums, int l, int r) {
+        l++;
+        while (nums[l] == nums[l - 1] && l < r) {
+            l++;
+        }
+        return l;
+    }
+
+    private int decreaseR(int[] nums, int r, int l) {
+        r--;
+        while (nums[r] == nums[r + 1] && l < r) {
+            r--;
+        }
+        return r;
     }
 }
