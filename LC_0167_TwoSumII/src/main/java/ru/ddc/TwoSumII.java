@@ -1,17 +1,20 @@
 package ru.ddc;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class TwoSumII {
-    private final Map<Integer, Integer> cache = new HashMap<>();
-
     public int[] twoSum(int[] numbers, int target) {
-        for (int i = 0; i < numbers.length - 1; i++) {
-            int j = Arrays.binarySearch(numbers, i + 1, numbers.length, target - numbers[i]);
-            if (j > i) {
-                return new int[]{i + 1, j +1};
+        int l = 0, r = numbers.length - 1;
+        while (l < r) {
+            int sum = numbers[l] + numbers[r];
+            if (sum > target) {
+                r = Arrays.binarySearch(numbers, l + 1, r, target - numbers[l]);
+                r = r < 0 ? -r - 2 : r;
+            } else if (sum < target) {
+                l = Arrays.binarySearch(numbers, l + 1, r, target - numbers[r]);
+                l = l < 0 ? -l - 1 : l;
+            } else {
+                return new int[]{l + 1, r + 1};
             }
         }
         return null;
