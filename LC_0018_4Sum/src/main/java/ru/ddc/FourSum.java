@@ -4,54 +4,46 @@ import java.util.*;
 
 public class FourSum {
     public List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
-        Map<Long, List<Pair>> map = new HashMap<>();
-        for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                Pair pair = new Pair(i, j);
-                ArrayList<Pair> pairsList = new ArrayList<>() {{
-                    add(pair);
-                }};
-                map.merge((long) (nums[i] + nums[j]), pairsList, (pairs, pairs2) -> {
-                    pairs.addAll(pairs2);
-                    return pairs;
-                });
-            }
+
+        long average_value = target / 4;
+        if (nums[0] > average_value || average_value > nums[nums.length - 1]) {
+            return res;
         }
 
-        Set<List<Integer>> result = new HashSet<>();
         for (int i = 0; i < nums.length - 3; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) {
+            if (i > 0 && nums[i - 1] == nums[i]) {
                 continue;
             }
             for (int j = i + 1; j < nums.length - 2; j++) {
-                if (j > i + 1 && nums[j] == nums[j - 1]) {
-                    continue;
-                }
-                long val = (long) target - nums[i] - nums[j];
-                if (map.containsKey(val)) {
-                    for (Pair pair : map.get(val)) {
-                        int k = pair.i;
-                        int l = pair.j;
-                        if (k > j) {
-                            result.add(List.of(nums[i], nums[j], nums[k], nums[l]));
+                if (!(j > i + 1 && nums[j] == nums[j - 1])) {
+                    int left = j + 1;
+                    int right = nums.length - 1;
+                    while (left < right) {
+                        int s = nums[i] + nums[j] + nums[left] + nums[right];
+                        if (s == target) {
+                            res.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
+                            left++;
+                            right--;
+                            while (nums[left] == nums[left - 1] && left < right) {
+                                left++;
+                            }
+                            while (nums[right] == nums[right + 1] && left < right) {
+                                right--;
+                            }
+                        } else {
+                            if (s < target) {
+                                left++;
+                            } else {
+                                right--;
+                            }
                         }
                     }
                 }
+
             }
-
         }
-        
-        return new ArrayList<>(result);
-    }
-
-    public static class Pair {
-        int i;
-        int j;
-
-        public Pair(int i, int j) {
-            this.i = i;
-            this.j = j;
-        }
+        return res;
     }
 }
