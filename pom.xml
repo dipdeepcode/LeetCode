@@ -32,6 +32,7 @@
     <module>LC_0167_TwoSumII</module>
     <module>LC_0017_LetterCombinationsOfAPhoneNumber</module>
     <module>LC_0018_4Sum</module>
+      <module>LC_0031_NextPermutation</module>
   </modules>
 
   <properties>
