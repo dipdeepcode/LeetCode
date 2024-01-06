@@ -2,28 +2,16 @@ package ru.ddc;
 
 public class RemoveNthNodeFromEndOfList {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head.next == null) {
-            return null;
+        ListNode fast = head, slow = head;
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
         }
-
-        int size = 0;
-        ListNode temp = head;
-        while (temp != null) {
-            temp = temp.next;
-            size++;
+        if (fast == null) return head.next;
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
         }
-
-        if (n == size) {
-            return head.next;
-        }
-
-        temp = head;
-        int currp = 1;
-        while (currp != size - n) {
-            temp = temp.next;
-            currp++;
-        }
-        temp.next = temp.next.next;
+        slow.next = slow.next.next;
         return head;
     }
 }
