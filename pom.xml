@@ -21,8 +21,6 @@
     <module>LC_0008_StringToInteger</module>
     <module>LC_0009_PalindromeNumber</module>
     <module>LC_0010_RegularExpressionMatching</module>
-    <module>LC_0067_AddBinary</module>
-    <module>LC_0090_SubsetsII</module>
     <module>LC_0011_ContainerWithMostWater</module>
     <module>LC_0012_IntegerToRoman</module>
     <module>LC_0013_RomanToInteger</module>
@@ -33,7 +31,10 @@
     <module>LC_0018_4Sum</module>
     <module>LC_0019_RemoveNthNodeFromEndOfList</module>
     <module>LC_0020_ValidParentheses</module>
+    <module>LC_0021_MergeTwoSortedLists</module>
     <module>LC_0031_NextPermutation</module>
+    <module>LC_0067_AddBinary</module>
+    <module>LC_0090_SubsetsII</module>
     <module>LC_0167_TwoSumII</module>
   </modules>
 
