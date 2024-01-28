@@ -32,6 +32,7 @@
     <module>LC_0019_RemoveNthNodeFromEndOfList</module>
     <module>LC_0020_ValidParentheses</module>
     <module>LC_0021_MergeTwoSortedLists</module>
+    <module>LC_0022_GenerateParentheses</module>
     <module>LC_0031_NextPermutation</module>
     <module>LC_0067_AddBinary</module>
     <module>LC_0090_SubsetsII</module>
