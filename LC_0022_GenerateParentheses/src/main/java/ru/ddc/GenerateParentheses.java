@@ -5,21 +5,26 @@ import java.util.List;
 
 public class GenerateParentheses {
     List<String> list = new ArrayList<>();
+    StringBuilder sb = new StringBuilder();
     public List<String> generateParenthesis(int n) {
-        generateParenthesisAns("", n, n);
+        generateParenthesisAns(n, n);
         return list;
     }
 
-    private void generateParenthesisAns(String p, int open, int close) {
+    private void generateParenthesisAns(int open, int close) {
         if (open == 0 && close == 0) {
-            list.add(p);
+            list.add(sb.toString());
             return;
         }
         if (open != 0) {
-            generateParenthesisAns(p + "(", open - 1, close);
+            sb.append("(");
+            generateParenthesisAns(open - 1, close);
+            sb.deleteCharAt(sb.length() - 1);
         }
         if (close > open) {
-            generateParenthesisAns(p + ")", open, close - 1);
+            sb.append(")");
+            generateParenthesisAns(open, close - 1);
+            sb.deleteCharAt(sb.length() - 1);
         }
     }
 }
