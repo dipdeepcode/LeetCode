@@ -1,57 +1,48 @@
 package ru.ddc;
 
-import java.util.Arrays;
-
 class MergeKSortedLists {
     public ListNode mergeKLists(ListNode[] lists) {
 
-        if (lists == null) {
+        if (lists == null || lists.length == 0) {
             return null;
         }
 
-        int listLength = lists.length;
-        ListNode[] clearedList = Arrays.copyOf(lists, listLength);
-        for (int i = 0, shift = 0; i < listLength; i++) {
-            if (lists[i] == null) {
-                clearedList = removeElement(clearedList, i - shift++);
-            }
-        }
+        return mergeKLists(lists, 0, lists.length - 1);
+    }
 
-        ListNode node = new ListNode();
-        ListNode result = node;
-        while (clearedList.length > 0) {
-            int minIndex = getMinIndex(clearedList);
-            node.next = clearedList[minIndex];
-            node = node.next;
-            if (clearedList[minIndex].next != null) {
-                clearedList[minIndex] = clearedList[minIndex].next;
+    private ListNode mergeKLists(ListNode[] lists, int start, int end) {
+        if (start == end) {
+            return lists[start];
+        }
+        int mid = start + (end - start) / 2;
+        ListNode left = mergeKLists(lists, start, mid);
+        ListNode right = mergeKLists(lists, mid + 1, end);
+        return merge(left, right);
+    }
+
+    private ListNode merge(ListNode left, ListNode right) {
+        ListNode head = new ListNode(-1);
+        ListNode temp = head;
+        while (left != null && right != null) {
+            if (left.val < right.val) {
+                temp.next = left;
+                left = left.next;
             } else {
-                clearedList = removeElement(clearedList, minIndex);
+                temp.next = right;
+                right = right.next;
             }
+            temp = temp.next;
         }
-
-        return result.next;
-    }
-
-    private ListNode[] removeElement(ListNode[] array, int index) {
-        ListNode[] newArray = new ListNode[array.length - 1];
-        for (int i = 0, j = 0; i < array.length; i++) {
-            if (i != index) {
-                newArray[j++] = array[i];
-            }
+        while (left != null) {
+            temp.next = left;
+            left = left.next;
+            temp = temp.next;
         }
-        return newArray;
-    }
-
-    private int getMinIndex(ListNode[] lists) {
-        int index = 0;
-        int min = lists[index].val;
-        for (int i = 1; i < lists.length; i++) {
-            if (lists[i].val < min) {
-                index = i;
-                min = lists[i].val;
-            }
+        while (right != null) {
+            temp.next = right;
+            right = right.next;
+            temp = temp.next;
         }
-        return index;
+        return head.next;
     }
 }
