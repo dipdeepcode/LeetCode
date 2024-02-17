@@ -34,6 +34,7 @@
     <module>LC_0021_MergeTwoSortedLists</module>
     <module>LC_0022_GenerateParentheses</module>
     <module>LC_0023_MergeKSortedLists</module>
+    <module>LC_0024_SwapNodesInPairs</module>
     <module>LC_0031_NextPermutation</module>
     <module>LC_0036_ValidSudoku</module>
     <module>LC_0067_AddBinary</module>
