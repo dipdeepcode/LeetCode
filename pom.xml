@@ -36,6 +36,7 @@
     <module>LC_0023_MergeKSortedLists</module>
     <module>LC_0024_SwapNodesInPairs</module>
     <module>LC_0025_ReverseNodesInKGroup</module>
+    <module>LC_0026_RemoveDuplicatesFromSortedArray</module>
     <module>LC_0031_NextPermutation</module>
     <module>LC_0036_ValidSudoku</module>
     <module>LC_0067_AddBinary</module>
