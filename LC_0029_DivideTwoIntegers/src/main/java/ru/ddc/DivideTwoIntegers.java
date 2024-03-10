@@ -2,51 +2,25 @@ package ru.ddc;
 
 public class DivideTwoIntegers {
     public int divide(int dividend, int divisor) {
-        if (dividend == divisor) {
-            return 1;
-        }
+        if (dividend == Integer.MIN_VALUE && divisor == -1) return Integer.MAX_VALUE;
 
-        if (dividend == Integer.MIN_VALUE && divisor == 1) {
-            return dividend;
-        }
+        boolean isNegative = dividend < 0 ^ divisor < 0;
 
-        if (dividend == Integer.MIN_VALUE && divisor == -1) {
-            return ~dividend;
-        }
+        dividend = Math.abs(dividend);
+        divisor = Math.abs(divisor);
 
-        if (divisor == Integer.MIN_VALUE) {
-            return 0;
-        }
+        int quotient = 0;
+        while (dividend - divisor >= 0) {
 
-        if (divisor == 2) {
-            return dividend >> 1;
-        }
-
-        int cnt = 0;
-        if (dividend < 0 && divisor < 0) {
-            while (dividend <= divisor) {
-                dividend -= divisor;
-                cnt++;
+            int subQuot = 0;
+            while ((dividend - (divisor << subQuot << 1)) >= 0) {
+                subQuot++;
             }
-            return cnt;
-        } else if (dividend < 0 && divisor > 0) {
-            while (dividend <= -divisor) {
-                dividend += divisor;
-                cnt++;
-            }
-            return -cnt;
-        } else if (dividend >= 0 && divisor < 0) {
-            while (-dividend <= divisor) {
-                dividend += divisor;
-                cnt++;
-            }
-            return -cnt;
-        } else {
-            while (dividend >= divisor) {
-                dividend -= divisor;
-                cnt++;
-            }
-            return cnt;
+
+            quotient += 1 << subQuot;
+            dividend -= divisor << subQuot;
         }
+
+        return isNegative ? -quotient : quotient;
     }
 }
