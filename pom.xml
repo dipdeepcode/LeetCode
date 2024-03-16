@@ -40,6 +40,7 @@
     <module>LC_0027_RemoveElement</module>
     <module>LC_0028_FindTheIndexOfTheFirstOccurrenceInAString</module>
     <module>LC_0029_DivideTwoIntegers</module>
+    <module>LC_0030_SubstringWithConcatenationOfAllWords</module>
     <module>LC_0031_NextPermutation</module>
     <module>LC_0036_ValidSudoku</module>
     <module>LC_0067_AddBinary</module>
