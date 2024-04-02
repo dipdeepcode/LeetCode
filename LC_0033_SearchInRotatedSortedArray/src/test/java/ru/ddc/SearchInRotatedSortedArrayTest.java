@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SearchInRotatedSortedArrayTest {
-    private SearchInRotatedSortedArray search = new SearchInRotatedSortedArray();
+    private final SearchInRotatedSortedArray search = new SearchInRotatedSortedArray();
 
     @Test
     public void test1() {
