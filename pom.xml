@@ -43,6 +43,7 @@
     <module>LC_0030_SubstringWithConcatenationOfAllWords</module>
     <module>LC_0031_NextPermutation</module>
     <module>LC_0032_LongestValidParentheses</module>
+    <module>LC_0033_SearchInRotatedSortedArray</module>
     <module>LC_0036_ValidSudoku</module>
     <module>LC_0067_AddBinary</module>
     <module>LC_0090_SubsetsII</module>
