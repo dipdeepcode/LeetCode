@@ -47,6 +47,7 @@
     <module>LC_0034_FindFirstAndLastPositionOfElementInSortedArray</module>
     <module>LC_0035_SearchInsertPosition</module>
     <module>LC_0036_ValidSudoku</module>
+    <module>LC_0037_SudokuSolver</module>
     <module>LC_0067_AddBinary</module>
     <module>LC_0090_SubsetsII</module>
     <module>LC_0167_TwoSumII</module>
