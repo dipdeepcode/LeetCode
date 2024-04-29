@@ -3,34 +3,26 @@ package ru.ddc;
 public class CountAndSay {
     public String countAndSay(int n) {
         StringBuilder sb = new StringBuilder("1");
-
         for (int i = 0; i < n - 1; i++) {
-            StringBuilder sb1 = new StringBuilder();
-            char pre = 0;
-            int cnt = 0;
-            for (int j = 0; j < sb.length(); j++) {
-
-                if (j == 0) {
-                    pre = sb.charAt(j);
-                    cnt++;
-                    continue;
-                }
-
-                if (sb.charAt(j) == pre) {
-                    cnt++;
-                    continue;
-                }
-
-                if (sb.charAt(j) != pre) {
-                    sb1.append(cnt).append(pre);
-                    pre = sb.charAt(j);
-                    cnt = 1;
-                }
-
-            }
-            sb1.append(cnt).append(pre);
-            sb = sb1;
+            sb = getNextState(sb);
         }
         return sb.toString();
+    }
+    private StringBuilder getNextState(StringBuilder sb) {
+        StringBuilder sb1 = new StringBuilder();
+        int len = sb.length();
+        int i = 0;
+
+        while (i < len) {
+            char ch = sb.charAt(i++);
+            int cnt = 1;
+            while (i < len && ch == sb.charAt(i)) {
+                cnt++;
+                i++;
+            }
+            sb1.append(cnt).append(ch);
+        }
+
+        return sb1;
     }
 }
