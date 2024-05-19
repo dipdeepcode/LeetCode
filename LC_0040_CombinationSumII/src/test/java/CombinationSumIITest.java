@@ -5,7 +5,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CombinationSumIITest {
-    private CombinationSumII combinationSumII = new CombinationSumII();
+    private final CombinationSumII combinationSumII = new CombinationSumII();
 
     @Test
     public void test1() {
