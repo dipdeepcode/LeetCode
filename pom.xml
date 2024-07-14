@@ -51,6 +51,7 @@
     <module>LC_0038_CountAndSay</module>
     <module>LC_0039_CombinationSum</module>
     <module>LC_0040_CombinationSumII</module>
+    <module>LC_0041_FirstMissingPositive</module>
     <module>LC_0067_AddBinary</module>
     <module>LC_0090_SubsetsII</module>
     <module>LC_0167_TwoSumII</module>
