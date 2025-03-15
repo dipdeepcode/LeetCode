@@ -54,6 +54,7 @@
     <module>LC_0041_FirstMissingPositive</module>
     <module>LC_0042_TrappingRainWater</module>
     <module>LC_0043_MultiplyStrings</module>
+    <module>LC_0044_WildcardMatching</module>
     <module>LC_0067_AddBinary</module>
     <module>LC_0090_SubsetsII</module>
     <module>LC_0167_TwoSumII</module>
