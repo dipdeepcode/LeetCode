@@ -172,4 +172,9 @@ class TwoSumTest {
     public void test05() {
         assertArrayEquals(new int[]{0, 7486}, twoSum.twoSum(arr, 20000));
     }
+
+    @Test
+    public void test06() {
+        assertArrayEquals(new int[]{2, 3}, twoSum.twoSum(new int[]{0, 2, 3, 4}, 7));
+    }
 }
