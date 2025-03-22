@@ -1,18 +1,18 @@
 public class JumpGameII {
-    private int minCnt = Integer.MAX_VALUE;
-
     public int jump(int[] nums) {
-        jump1(nums, 0, 0);
-        return minCnt;
-    }
+        int near = 0, far = 0, jumps = 0;
 
-    private void jump1(int[] nums, int i, int cnt) {
-        if (i >= nums.length - 1) {
-            minCnt = Math.min(minCnt, cnt);
-        } else {
-            for (int j = 1; j <= nums[i]; j++) {
-                jump1(nums, i + j, cnt + 1);
+        while (far < nums.length - 1) {
+            System.out.println("near: " + near + ", far: " + far);
+            int farthest = 0;
+            for (int i = near; i <= far; i++) {
+                farthest = Math.max(farthest, i + nums[i]);
             }
+            near = far + 1;
+            far = farthest;
+            jumps++;
         }
+
+        return jumps;
     }
 }
